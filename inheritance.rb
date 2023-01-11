@@ -2,8 +2,7 @@ class Vehicle
   def initialize
     @speed = 0
     @direction = 'north'
-    @fuel = 'premium'
-    @make = 'audi'
+
   end
 
   def brake
@@ -25,25 +24,37 @@ class Vehicle
   end
 end
 
-class car < vehile
+class Car < Vehicle
+  def initialize(input_options)
+    super
+    @make = input_make
+    @mode = input_model
+  end
+  
   def honk_horn
     puts "beeeeep!"
   end
 end
 
-class Bike < Car
+
+class Bike < Vehicle 
+  def initialize(input_options)
+    @type = input_type
+    @weight = input_weight
+  end
+
   def ring_bell
     puts "ring ring"
   end
 end
 
 
-car = Car.new()
+car = Car.new(make: "honda", model: "civic")
 car.turn("east")
 p car
 car.honk_horn
 
-bike = Bike.new
+bike = Bike.new(type: "mountain", weight: 25)
 bike.turn("west")
 p bike
 bike.ring_bell
