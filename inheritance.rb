@@ -1,8 +1,7 @@
 class Vehicle
   def initialize
     @speed = 0
-    @direction = 'north'
-
+    @direction = "north"
   end
 
   def brake
@@ -12,8 +11,6 @@ class Vehicle
   def accelerate
     @speed += 10
   end
-
- 
 
   def turn(new_direction)
     @direction = new_direction
@@ -30,14 +27,13 @@ class Car < Vehicle
     @make = input_make
     @mode = input_model
   end
-  
+
   def honk_horn
     puts "beeeeep!"
   end
 end
 
-
-class Bike < Vehicle 
+class Bike < Vehicle
   def initialize(input_options)
     @type = input_type
     @weight = input_weight
@@ -48,7 +44,6 @@ class Bike < Vehicle
   end
 end
 
-
 car = Car.new(make: "honda", model: "civic")
 car.turn("east")
 p car
@@ -58,4 +53,4 @@ bike = Bike.new(type: "mountain", weight: 25)
 bike.turn("west")
 p bike
 bike.ring_bell
-bike.honl_horn
+bike.honk_horn
